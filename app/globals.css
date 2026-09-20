@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-graphite font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background-color: #d92b2b;
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #d92b2b;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 md:px-10;
+  }
+
+  .hairline {
+    @apply border-hairline;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-paper px-7 py-3.5 text-[13px] font-semibold tracking-wide2 uppercase transition-colors duration-300 hover:bg-brand-dark;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-graphite text-graphite px-7 py-3.5 text-[13px] font-semibold tracking-wide2 uppercase transition-colors duration-300 hover:border-brand hover:text-brand;
+  }
+
+  .btn-brand {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-paper px-7 py-3.5 text-[13px] font-semibold tracking-wide2 uppercase transition-colors duration-300 hover:bg-brand-dark;
+  }
+
+  .card-soft {
+    @apply rounded-2xl border border-hairline bg-paper shadow-sm transition-shadow duration-300;
+  }
+
+  .field-label {
+    @apply block text-[12px] font-semibold tracking-wide2 uppercase text-graphite mb-2;
+  }
+
+  .field-input {
+    @apply w-full rounded-lg border border-hairline bg-paper px-4 py-3 text-[15px] text-graphite placeholder:text-steel/70 focus:border-brand focus:ring-1 focus:ring-brand transition-colors;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
